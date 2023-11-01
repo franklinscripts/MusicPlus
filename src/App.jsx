@@ -1,21 +1,24 @@
-import Dashboard from "./components/Dashboard"
-import AppLayout from "./layout/layout"
+import Dashboard from "./pages/Dashboard";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Sidenav from "./components/Sidenav";
+import Search from "./pages/Search";
 
 function App() {
-
   return (
-    /*
-      border-radius: 24px;
-      border: 1.5px solid #ffffff6b;
-      background: #cecece1a;
-      backdrop-filter: blur(60px);
-    */
-    <div className=' bg-[#cecece1a] backdrop-blur-[60px]'>
-     <AppLayout>
-      <Dashboard />
-     </AppLayout>
-    </div>
-  )
+    <Router>
+      <div className="bg-[rgb(0,0,0)] h-screen ">
+        <div className="flex gap-4">
+          <aside className="w-[600px]">
+            <Sidenav />
+          </aside>
+          <Routes>
+            <Route path="/" element={<Dashboard />} />
+            <Route path="/search" element={<Search />} />
+          </Routes>
+        </div>
+      </div>
+    </Router>
+  );
 }
 
-export default App
+export default App;

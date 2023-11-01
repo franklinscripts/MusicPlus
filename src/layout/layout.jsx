@@ -3,8 +3,8 @@ import Sidenav from '../components/Sidenav'
 
 const AppLayout = ({ children }) => {
   return (
-    <div className='bg-[#000000] h-screen flex '>
-        <aside className='w-[500px]'>
+    <div className='bg-[rgb(0,0,0)] h-screen flex '>
+        <aside className='w-[600px]'>
             <Sidenav />
         </aside>
         <div className='w-full'>
